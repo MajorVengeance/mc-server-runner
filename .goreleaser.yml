@@ -9,6 +9,7 @@ brews:
 builds:
 - goos:
   - linux
+  - windows
   goarch:
   - amd64
   - arm
@@ -16,6 +17,11 @@ builds:
   goarm:
   - "6"
   - "7"
+  ignore:
+    - goos: windows
+      goarch: arm
+    - goos: windows
+      goarch: arm64
   main: .
   env:
     - CGO_ENABLED=0
